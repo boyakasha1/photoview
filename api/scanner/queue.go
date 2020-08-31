@@ -43,7 +43,7 @@ func InitializeScannerQueue(db *sql.DB) {
 		in_progress: make([]ScannerJob, 0),
 		up_next:     make([]ScannerJob, 0),
 		db:          db,
-		settings:    ScannerQueueSettings{max_concurrent_tasks: 3},
+		settings:    ScannerQueueSettings{max_concurrent_tasks: 12},
 	}
 
 	go global_scanner_queue.startBackgroundWorker()
